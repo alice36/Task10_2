@@ -15,4 +15,18 @@ public enum Direction {
         return directionName;
     }
 
+    public static Direction convert (int num){
+        Direction[] directions = Direction.values();
+        Direction finalDirection = null;
+        boolean check = false;
+
+        for (Direction direction : directions) {
+            if (direction.ordinal() == num) {
+                finalDirection = direction;
+                check = true;
+            }
+        }
+        if (!check) finalDirection = directions[4];
+        return finalDirection;
+    }
 }
